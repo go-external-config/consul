@@ -79,8 +79,7 @@ func (this *ConsulPropertySource) newClient() *consul.Client {
 	if len(token) > 0 {
 		config.Token = token
 	}
-	client := optional.OfCommaErr(consul.NewClient(config)).OrElsePanic("Unable to initialize Consul client")
-	return client
+	return optional.OfCommaErr(consul.NewClient(config)).OrElsePanic("Unable to initialize Consul client")
 }
 
 func (this *ConsulPropertySource) Properties() map[string]string {
