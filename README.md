@@ -23,5 +23,5 @@ config/application.yaml
     	pass: consul:app/db/password
 
     consul:
-    	addr: http://127.0.0.1:8200
+    	addr: http://127.0.0.1:8500
     	token: generated
