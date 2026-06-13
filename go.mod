@@ -4,7 +4,7 @@ go 1.26
 
 require (
 	github.com/go-errr/go v1.0.12
-	github.com/go-external-config/go v1.0.35
+	github.com/go-external-config/go v1.0.36
 	github.com/hashicorp/consul/api v1.34.2
 )
 
