@@ -4,24 +4,28 @@ HashiCorp Consul is a service networking solution that enables teams to manage s
 
 cmd/app/main.go
 
-    import (
-        consul "github.com/go-external-config/consul/env"
-        "github.com/go-external-config/go/env"
-    )
+```go
+import (
+    consul "github.com/go-external-config/consul/env"
+    "github.com/go-external-config/go/env"
+)
 
-    var _ = env.Instance().WithPropertySource(consul.NewConsulPropertySource())
+var _ = env.Instance().WithPropertySource(consul.NewConsulPropertySource())
 
-    func main() {
-    	defer err.Recover()
-    	fmt.Println(env.Value[string]("${db.pass}"))
-    	// fmt.Println(env.Value[string]("${consul.app/db/password}"))
-    }
+func main() {
+    defer err.Recover()
+    fmt.Println(env.Value[string]("${db.pass}"))
+    // fmt.Println(env.Value[string]("${consul.app/db/password}"))
+}
+```
 
 config/application.yaml
 
-    db:
-    	pass: consul:app/db/password
+```yaml
+db:
+    pass: consul:app/db/password
 
-    consul:
-    	addr: http://127.0.0.1:8500
-    	token: generated
+consul:
+    addr: http://127.0.0.1:8500
+    token: generated
+```
