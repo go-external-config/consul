@@ -27,10 +27,12 @@ github.com/fatih/color v1.9.0/go.mod h1:eQcE1qtQxscV5RaZvpXrrb8Drkc3/DdQ+uUYCNjL
 github.com/fatih/color v1.13.0/go.mod h1:kLAiJbzzSOZDVNGyDpeOxJ47H46qBXwg5ILebYFFOfk=
 github.com/fatih/color v1.18.0 h1:S8gINlzdQ840/4pfAwic/ZE0djQEH3wM94VfqLTZcOM=
 github.com/fatih/color v1.18.0/go.mod h1:4FelSpRwEGDpQ12mAdzqdOukCy4u8WUtOY6lkT/6HfU=
-github.com/go-errr/go v1.0.12 h1:ILsR4e1wem1xulGCP3ozphN9o++MKM7H7XyTDNjGsc4=
-github.com/go-errr/go v1.0.12/go.mod h1:hd3Xbk1kA04T6215k89hJOgArzO68BOw3J3ZvaFa4Z0=
-github.com/go-external-config/go v1.0.36 h1:LhuacZxnIMQAkZ7MxYh4f+TpEycDUsmf0eOjpbRIEBg=
-github.com/go-external-config/go v1.0.36/go.mod h1:CG6SLE9KrXfToLKm7tvzjFRw5B07YkVOIsQwpPrsKuE=
+github.com/go-errr/go v1.0.13 h1:S37wovD3gimqH5YTjCAdAIrqx//a2abxvdAdylcYfQ8=
+github.com/go-errr/go v1.0.13/go.mod h1:hd3Xbk1kA04T6215k89hJOgArzO68BOw3J3ZvaFa4Z0=
+github.com/go-external-config/go v1.0.38 h1:rVE+q4bxhLdAzdP3SMl0QFefW7omPd+uAabLr4PmkdY=
+github.com/go-external-config/go v1.0.38/go.mod h1:J61b6EOTBbd8WLvqW6NrL1OaHXfFLPagbLktfjo2zqk=
+github.com/go-jang/go v1.0.0 h1:9yT6lQ64wgiGBfphXW0DoYtNN0zv6bcsAjXF4GHY9PQ=
+github.com/go-jang/go v1.0.0/go.mod h1:su36pz/KsvXh5AG7Sx30uTFcrLO0/IRegoyjIVumQ08=
 github.com/go-kit/kit v0.8.0/go.mod h1:xBxKIO96dXMWWy0MnWVtmwkA9/13aqxPnvrjFYMA2as=
 github.com/go-kit/kit v0.9.0/go.mod h1:xBxKIO96dXMWWy0MnWVtmwkA9/13aqxPnvrjFYMA2as=
 github.com/go-logfmt/logfmt v0.3.0/go.mod h1:Qt1PoO58o5twSAckw1HlFXLmHsOX5/0LbT9GBnD5lWE=

@@ -1,10 +1,11 @@
 module github.com/go-external-config/consul
 
-go 1.26
+go 1.26.2
 
 require (
-	github.com/go-errr/go v1.0.12
-	github.com/go-external-config/go v1.0.36
+	github.com/go-errr/go v1.0.13
+	github.com/go-external-config/go v1.0.38
+	github.com/go-jang/go v1.0.0
 	github.com/hashicorp/consul/api v1.34.2
 )
 
