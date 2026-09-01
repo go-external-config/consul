@@ -17,13 +17,11 @@ const consul_addr = "consul.addr"
 const consul_token = "consul.token"
 
 type ConsulPropertySource struct {
-	environment *env.Environment
-	client      *consul.Client
+	client *consul.Client
 }
 
 func NewConsulPropertySource() *ConsulPropertySource {
 	ps := &ConsulPropertySource{}
-	ps.environment = env.Instance()
 	ps.client = ps.newClient()
 	return ps
 }
@@ -43,7 +41,7 @@ func (this *ConsulPropertySource) HasProperty(key string) bool {
 			return true
 		}
 	}
-	for _, source := range this.environment.PropertySources() {
+	for _, source := range env.PropertySources() {
 		if source.Properties() != nil && source.HasProperty(key) {
 			return strings.HasPrefix(source.Property(key), CONSUL_VALUE_PREFIX)
 		}
@@ -53,11 +51,11 @@ func (this *ConsulPropertySource) HasProperty(key string) bool {
 
 func (this *ConsulPropertySource) Property(key string) string {
 	if strings.HasPrefix(key, CONSUL_KEY_PREFIX) {
-		return this.getPropertyValue(fmt.Sprint(this.environment.ResolveRequiredPlaceholders(key[len(CONSUL_KEY_PREFIX):])))
+		return this.getPropertyValue(fmt.Sprint(env.ResolveRequiredPlaceholders(key[len(CONSUL_KEY_PREFIX):])))
 	}
-	for _, source := range this.environment.PropertySources() {
+	for _, source := range env.PropertySources() {
 		if source.Properties() != nil && source.HasProperty(key) {
-			return this.getPropertyValue(fmt.Sprint(this.environment.ResolveRequiredPlaceholders(source.Property(key)[len(CONSUL_VALUE_PREFIX):])))
+			return this.getPropertyValue(fmt.Sprint(env.ResolveRequiredPlaceholders(source.Property(key)[len(CONSUL_VALUE_PREFIX):])))
 		}
 	}
 	panic(err.NewIllegalArgumentException("No value present for " + key))
@@ -74,8 +72,8 @@ func (this *ConsulPropertySource) getPropertyValue(key string) string {
 
 func (this *ConsulPropertySource) newClient() *consul.Client {
 	config := consul.DefaultConfig()
-	config.Address = this.environment.Property(consul_addr)
-	token := fmt.Sprint(this.environment.ResolveRequiredPlaceholders("${consul.token:}"))
+	config.Address = env.Property(consul_addr)
+	token := fmt.Sprint(env.ResolveRequiredPlaceholders("${consul.token:}"))
 	if len(token) > 0 {
 		config.Token = token
 	}

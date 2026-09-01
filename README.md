@@ -6,11 +6,9 @@ cmd/app/main.go
 
 ```go
 import (
-    consul "github.com/go-external-config/consul/env"
+    _ "github.com/go-external-config/consul"
     "github.com/go-external-config/go/env"
 )
-
-var _ = env.Instance().WithPropertySource(consul.NewConsulPropertySource())
 
 func main() {
     defer err.Recover()
